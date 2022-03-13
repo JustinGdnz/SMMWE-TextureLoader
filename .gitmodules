@@ -1,0 +1,6 @@
+[submodule "dependencies/TextureLoader"]
+	path = dependencies/TextureLoader
+	url = https://github.com/JustinGdnz/TextureLoader.git
+[submodule "dependencies/libSMMWE"]
+	path = dependencies/libSMMWE
+	url = https://github.com/JustinGdnz/libSMMWE.git
