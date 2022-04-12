@@ -1,0 +1,3 @@
+/// @description Texture manager
+
+textures = [];

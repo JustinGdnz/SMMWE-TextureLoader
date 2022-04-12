@@ -4,3 +4,6 @@
 [submodule "dependencies/libSMMWE"]
 	path = dependencies/libSMMWE
 	url = https://github.com/JustinGdnz/libSMMWE.git
+[submodule "dependencies/libzippp"]
+	path = dependencies/libzippp
+	url = https://github.com/ctabin/libzippp
