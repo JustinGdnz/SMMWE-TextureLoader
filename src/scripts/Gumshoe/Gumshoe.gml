@@ -29,9 +29,10 @@ But if you want to search in the whole file system as well, you may wish to set 
 On Microsoft platforms this flag does nothing as the file system is not case sensitive.
 */
 
-/// @param directory
+
 /// @param fileExtension
 /// @param returnStruct
+/// @param [recursive]
 /// @param [forceLCNames] Force lowercase names on non-MSFT platforms, see comment(s) above for an explanation.
 function gumshoe()
 {
@@ -56,7 +57,8 @@ function gumshoe()
     var _directory                 = argument[0];
     var _extension                 = argument[1];
     var _return_struct             = argument[2];
-    var _force_lcnames             = (argument_count > 3)? argument[3] : true;
+    var _recursive                 = (argument_count > 3)? argument[3] : true;
+    var _force_lcnames             = (argument_count > 4)? argument[4] : true;
     
     //The JS export does not support file search at all.
     if (os_browser != browser_not_a_browser)
@@ -91,7 +93,7 @@ function gumshoe()
     }
     else
     {
-        return __gumshoe_array(_directory, _extension, [], _match_all_mask, _path_separator);
+        return __gumshoe_array(_directory, _extension, [], _match_all_mask, _path_separator, _recursive);
     }
 }
 
@@ -100,7 +102,8 @@ function gumshoe()
 /// @param resultArray
 /// @param matchAllMask
 /// @param pathSeparator
-function __gumshoe_array(_directory, _extension, _result, _match_all_mask, _path_sep)
+/// @param _recursive
+function __gumshoe_array(_directory, _extension, _result, _match_all_mask, _path_sep, _recursive)
 {
     var _directories = [];
     
@@ -128,12 +131,15 @@ function __gumshoe_array(_directory, _extension, _result, _match_all_mask, _path
     file_find_close();
     
     //Now handle the directories
-    var _i = 0;
-    repeat(array_length(_directories))
-    {
-        __gumshoe_array(_directories[_i], _extension, _result, _match_all_mask, _path_sep);
-        ++_i;
-    }
+	if (_recursive)
+	{
+	    var _i = 0;
+	    repeat(array_length(_directories))
+	    {
+	        __gumshoe_array(_directories[_i], _extension, _result, _match_all_mask, _path_sep, _recursive);
+	        ++_i;
+	    }
+	}
     
     return _result;
 }

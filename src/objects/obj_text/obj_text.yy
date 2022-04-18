@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "sprText",
-    "path": "sprites/sprText/sprText.yy",
+    "name": "spr_text",
+    "path": "sprites/spr_text/spr_text.yy",
   },
   "solid": false,
   "visible": true,
@@ -33,7 +33,7 @@
   "properties": [
     {"varType":4,"value":"\"Abc\"","rangeEnabled":false,"rangeMin":0.0,"rangeMax":10.0,"listItems":[],"multiselect":false,"filters":[],"resourceVersion":"1.0","name":"text","tags":[],"resourceType":"GMObjectProperty",},
     {"varType":7,"value":"$FFFFFFFF","rangeEnabled":false,"rangeMin":0.0,"rangeMax":10.0,"listItems":[],"multiselect":false,"filters":[],"resourceVersion":"1.0","name":"color","tags":[],"resourceType":"GMObjectProperty",},
-    {"varType":2,"value":"\"fntAseprite\"","rangeEnabled":false,"rangeMin":0.0,"rangeMax":10.0,"listItems":[],"multiselect":false,"filters":[],"resourceVersion":"1.0","name":"font","tags":[],"resourceType":"GMObjectProperty",},
+    {"varType":2,"value":"\"fnt_aseprite\"","rangeEnabled":false,"rangeMin":0.0,"rangeMax":10.0,"listItems":[],"multiselect":false,"filters":[],"resourceVersion":"1.0","name":"font","tags":[],"resourceType":"GMObjectProperty",},
     {"varType":6,"value":"fa_left","rangeEnabled":false,"rangeMin":0.0,"rangeMax":10.0,"listItems":[
         "fa_left",
         "fa_center",
@@ -52,7 +52,7 @@
   "overriddenProperties": [],
   "parent": {
     "name": "Text",
-    "path": "folders/Objects/Text.yy",
+    "path": "folders/Objects/Special/Text.yy",
   },
   "resourceVersion": "1.0",
   "name": "obj_text",

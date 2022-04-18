@@ -69,8 +69,8 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "IDE",
-    "path": "folders/Sprites/IDE.yy",
+    "name": "Managers",
+    "path": "folders/Sprites/Special/Managers.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_sus_marker",
