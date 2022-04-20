@@ -1,16 +1,16 @@
-/// @description 
+/// @description Texture interface
 
-// Create fade
+// Create a screen fade
 fade = fade_create_below();
 
+// Set clickable layer
 button_layer = global.click_layer;
 
-// Reload texture
+// Reload textures
 with (obj_manager_texture) event_user(0);
 
+// Create the texture slots
 var size = array_length(obj_manager_texture.textures);
-
-// Create slots
 for (var i = 0; i < size; i++)
 {
 	var _x = x+((i%3)*104);
@@ -19,6 +19,8 @@ for (var i = 0; i < size; i++)
 	with (_slot)
 	{
 		texture_index = i;
+		
+		// Set slot data
 		event_user(0);
 	}
 }

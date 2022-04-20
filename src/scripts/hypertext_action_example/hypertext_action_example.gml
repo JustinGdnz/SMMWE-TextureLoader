@@ -1,3 +1,3 @@
 function hypertext_action_example(region = undefined) {
-	show_message("Hypertext example!\nEvent: " + string(region));
+	show_message("Hyperlink example!\nEvent: " + string(region));
 }

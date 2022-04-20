@@ -1,13 +1,16 @@
 {
   "spriteId": {
-    "name": "spr_gui_scroll_box",
-    "path": "sprites/spr_gui_scroll_box/spr_gui_scroll_box.yy",
+    "name": "spr_text_in_box",
+    "path": "sprites/spr_text_in_box/spr_text_in_box.yy",
   },
   "solid": false,
   "visible": true,
   "spriteMaskId": null,
   "persistent": false,
-  "parentObjectId": null,
+  "parentObjectId": {
+    "name": "obj_text",
+    "path": "objects/obj_text/obj_text.yy",
+  },
   "physicsObject": false,
   "physicsSensor": false,
   "physicsShape": 1,
@@ -30,11 +33,11 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Objects",
-    "path": "folders/Objects.yy",
+    "name": "Text",
+    "path": "folders/Objects/Special/Text.yy",
   },
   "resourceVersion": "1.0",
-  "name": "obj_gui_scroll_box",
+  "name": "obj_text_in_box",
   "tags": [],
   "resourceType": "GMObject",
 }

@@ -31,4 +31,11 @@ credits = "";
 for (var i = 0; i < array_length(pre_credits); i++)
 {
 	credits += "[region," + string(pre_credits[i]) + "]" + string(pre_credits[i]) + "[/region]\n";
+}*/
+
+open_supporturl = function(_region)
+{
+	var _url = credit_urls[real(_region)];
+	if (_url != "")
+		tl_open_url(_url);
 }
