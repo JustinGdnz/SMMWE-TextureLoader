@@ -18,7 +18,16 @@ draw_self();
 // And last draw the icon
 draw_sprite_stretched(_icon, _numb, x+4, y+4, 26, 26);
 
-if (!ready)
+
+if (ready)
+{
+	var _element = scribble(texture.Name)
+	_element.wrap(94, 12, true)
+	_element.starting_format("fnt_aseprite", c_black)
+	_element.align(fa_left, fa_center);
+	_element.draw(x+6, y+37);
+}
+else
 {
 	draw_set_alpha(0.5);
 	draw_rectangle_color(x-1, y-1, x+sprite_width, y+sprite_height, c_black, c_black, c_black, c_black, false);

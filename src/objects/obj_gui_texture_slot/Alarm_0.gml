@@ -1,7 +1,7 @@
 /// @description 
 
-// Exit whenever there's a delay or it was handled incorrectly
-if (global.thread_delay) {alarm[0] = 5; exit;}
+// Exit whenever there's a delay or it wasn't handled correctly
+if (global.frame_delay) {alarm[0] = 5; exit;}
 if (texture_index == undefined) { instance_destroy(); exit; }
 
 #region Get texture data
@@ -36,7 +36,11 @@ if (texture_index == undefined) { instance_destroy(); exit; }
 		buffer_delete(_buff);
 	
 		// Parse the data
-		texture = json_parse(_str);
+		data = json_parse(_str);
+		texture = data.pack;
+		
+		// Add path to the data
+		texture.path = _dir;
 	} else invalid = true;
 	
 	// Set sprites
@@ -54,5 +58,5 @@ ready = true;
 loadspinner_destroy(spinner);
 
 // Make a frame delay so every texture can load in different frames
-global.thread_delay = true;
+global.frame_delay = true;
 alarm[1] = 5;

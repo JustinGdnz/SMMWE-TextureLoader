@@ -2,6 +2,8 @@
 texture_index = undefined;
 manager = obj_manager_texture;
 
+button_layer = global.click_layer;
+
 #region Definitions
 
 	// Sprites
@@ -10,6 +12,7 @@ manager = obj_manager_texture;
 	preview = -1;
 	
 	// Texture data
+	data = undefined;
 	texture = undefined;
 	
 #endregion

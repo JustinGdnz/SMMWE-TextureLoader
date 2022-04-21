@@ -16,5 +16,5 @@ if (ready)
 // Destroy spinner
 loadspinner_destroy(spinner);
 
-// Restore the thread delay
-global.thread_delay = false;
+// Restore the frame delay
+global.frame_delay = false;

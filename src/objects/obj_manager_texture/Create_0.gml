@@ -2,4 +2,4 @@
 
 textures = [];
 
-global.thread_delay = false;
+global.frame_delay = false;
