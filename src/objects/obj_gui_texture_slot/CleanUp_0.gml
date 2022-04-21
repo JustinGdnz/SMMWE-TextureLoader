@@ -1,4 +1,20 @@
-/// @description 
-sprite_delete(icon);
-sprite_delete(banner);
-sprite_delete(preview);
+/// @description Cleanup some stuff
+
+// Delete temporal images
+if (ready)
+{
+	if (sprite_exists(icon))
+		sprite_delete(icon)
+
+	if (sprite_exists(banner))
+		sprite_delete(banner)
+
+	if (sprite_exists(preview))
+		sprite_delete(preview)
+}
+
+// Destroy spinner
+loadspinner_destroy(spinner);
+
+// Restore the thread delay
+global.thread_delay = false;

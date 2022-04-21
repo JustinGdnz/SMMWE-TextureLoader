@@ -105,7 +105,7 @@ function __filesystem_get_directories_internal(_directory, _result, _recursive)
 		if (directory_exists(_directory + _file))
 		{
 			array_push(_directories, _directory + _file + FILESYSTEM_PATH_SEPARATOR);
-			array_push(_result, _directory + _file);
+			array_push(_result, _directory + _file + FILESYSTEM_PATH_SEPARATOR);
 		}
 	}
 

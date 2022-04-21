@@ -21,8 +21,8 @@ scribble_font_set_default("fnt_aseprite");
 	#macro cache_directory global.cache_dir
 	
 	// Workspace directory
-	global.workspace_dir = local_directory + "Workspace\\";
-	#macro workspace_directory = global.workspace_dir
+	global.workspace_dir = local_directory + "Workspaces\\";
+	#macro workspace_directory global.workspace_dir
 	
 	// Create "Textures" directory
 	if (!directory_exists("Textures"))
