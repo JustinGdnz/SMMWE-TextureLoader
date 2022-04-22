@@ -1,4 +1,4 @@
-/// @description 
+/// @description Who am i?
 owner = undefined;
 
 // Force coordinates
@@ -6,6 +6,8 @@ x = 34;
 y = 28;
 
 button_layer = global.click_layer;
+
+fade = fade_create_below();
 
 #region Definitions
 
