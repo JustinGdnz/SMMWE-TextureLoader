@@ -2,7 +2,7 @@ function Macros() {
 	show_debug_message("Macros File")
 }
 
-#macro TL_VERSION "unstable" /* dev note: also change the version on gms2 project settngs ;) */
+#macro TL_VERSION "1.0.0-beta.5" /* dev note: also change the version on gms2 project settngs ;) */
 #macro TL_SERVER "https://discord.gg/HZxdxxv9fV"
 
 #macro JUSTIN_YT "https://www.youtube.com/channel/UCNQ-5fc7v3FQNMHfrbKXWlQ"

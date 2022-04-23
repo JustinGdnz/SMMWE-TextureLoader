@@ -1,30 +1,13 @@
 /// @description 
+
 if (!tl_is_process_running())
 {
-	if (!tl_init())
-	{
-		block = true
-		image_index = 1;
-	}
+	var _init = tl_init();
+	block = !_init;
 }
 else
 {
-	if (!tl_has_module(SMMWE_LIB_DLL))
-	{
-		block = false;
-		image_index = 0;
-	}
-	else
-	{
-		block = true
-		image_index = 1;
-	}
-}
-
-if (loading)
-{
-	block = true
-	image_index = 1;
+	block = tl_has_module(SMMWE_LIB_DLL);
 }
 
 alarm[0] = 15;

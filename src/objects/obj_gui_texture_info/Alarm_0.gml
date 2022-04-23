@@ -25,4 +25,7 @@ text_version = text_create_wrap(x+42, y+106, depth-5, "[][c_white]v" + string(te
 text_desc = text_create_box(x+153, y+40, 83, 80, depth-5, "[c_black]"+texture.Description); 
 text_credits = text_create_hyperlink_box(x+244, y+40, 64, 80, depth-5, "[c_black]"+credit_names, "dummy", c_red, 0.8, open_supporturl)
 
+// Create buttons
+button_load = instance_create_depth(room_width / 2, 162, depth-5, obj_button_load_texture)
+
 ready = true;

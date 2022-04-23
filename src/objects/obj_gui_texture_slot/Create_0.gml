@@ -1,4 +1,5 @@
 /// @description Slot object!
+/* THIS INSTANCE INHERIT VARIABLES FROM IT'S OWNER */
 
 // Owner data
 texture_index = undefined;
@@ -24,8 +25,8 @@ spinner = loadspinner_create(x+sprite_width/2, y+sprite_height/2, 0.25, 0.25, de
 	// Texture data
 	data = undefined;
 	texture = undefined;
-	path = "";
-	isZip = false;
+	texture_dir = "";
+	texture_zip = "";
 	
 	// Text elements
 	text_name = noone;

@@ -1,9 +1,7 @@
-/// @description 
+/// @description Load texture
 
-texture = undefined;
+button_layer = global.click_layer;
 
 block = true;
-image_index = 1;
-loading = false;
 
-alarm[0] = 1;
+alarm[0] = 15;

@@ -44,8 +44,8 @@ if (texture_index == undefined) { instance_destroy(); exit; }
 		
 		// Shortcut
 		texture = data.pack
-		path = _dir;
-		isZip = !_is_directory;
+		texture_dir = _dir;
+		texture_zip = _is_directory ? "" : _path;
 		
 		// Load sprites
 		icon = sprite_add(_dir + PACK_ICON, 1, false, true, 0, 0);
@@ -53,7 +53,7 @@ if (texture_index == undefined) { instance_destroy(); exit; }
 		preview = sprite_add(_dir + PACK_PREVIEW, 1, false, true, 0, 0);
 		
 		// Create text
-		text_name = text_create_wrap(x+6, y+33, depth-5, "[c_black]" + texture.Name, 94, 12, true);
+		text_name = text_create_wrap(x+6, y+33, depth-5, "[c_black]" + texture.Name, 90, 12, true);
 	}
 	catch(_)
 	{

@@ -1,5 +1,7 @@
 /// @description Who am i?
-// Owner
+/* THIS INSTANCE INHERIT VARIABLES FROM IT'S OWNER */
+
+// Owner data
 owner = undefined;
 
 // Force coordinates
@@ -28,6 +30,9 @@ fade = fade_create_below();
 	// Credits
 	credit_names = "[/region]";
 	credit_urls = [];
+	
+	// Buttons
+	button_load = noone;
 
 #endregion
 
