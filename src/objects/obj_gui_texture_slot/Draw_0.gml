@@ -18,19 +18,16 @@ draw_self();
 // And last draw the icon
 draw_sprite_stretched(_icon, _numb, x+4, y+4, 26, 26);
 
-
-if (ready)
+if (!invalid)
 {
-	var _element = scribble(texture.Name)
-	_element.wrap(94, 12, true)
-	_element.starting_format("fnt_aseprite", c_black)
-	_element.align(fa_left, fa_center);
-	_element.draw(x+6, y+37);
+	if (!ready)
+	{
+		draw_set_alpha(0.5);
+		draw_rectangle_color(x-1, y-1, x+sprite_width, y+sprite_height, c_black, c_black, c_black, c_black, false);
+		draw_set_alpha(1);
+	}
 }
 else
 {
-	draw_set_alpha(0.5);
-	draw_rectangle_color(x-1, y-1, x+sprite_width, y+sprite_height, c_black, c_black, c_black, c_black, false);
-	draw_set_alpha(1);
-	//draw_sprite_ext(spr_loading_spinner, 0, x+sprite_width/2, y+sprite_height/2, 0.25, 0.25, 0, c_white, 1);
+	draw_text(x, y, err.message);
 }

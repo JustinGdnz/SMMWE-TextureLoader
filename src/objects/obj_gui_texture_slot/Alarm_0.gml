@@ -1,4 +1,4 @@
-/// @description 
+/// @description Handle most of the stuff
 
 // Exit whenever there's a delay or it wasn't handled correctly
 if (global.frame_delay) {alarm[0] = 5; exit;}
@@ -28,7 +28,8 @@ if (texture_index == undefined) { instance_destroy(); exit; }
 		tl_zip_close_read();
 	}
 	
-	if (file_exists(_dir + PACK_ENTRY))
+	// Catch any error loading stuff
+	try
 	{
 		// Read pack file as string
 		var _buff = buffer_load(_dir + PACK_ENTRY);
@@ -37,21 +38,28 @@ if (texture_index == undefined) { instance_destroy(); exit; }
 	
 		// Parse the data
 		data = json_parse(_str);
-		//texture = data.pack;
 		
-		// Add path to the data
-		//texture.path = _dir;
-	} else invalid = true;
-	
-	// Validate json data
-	event_user(0)
-	
-	// Set sprites
-	if (!invalid)
+		// Validate the data
+		event_user(0)
+		
+		// Shortcut
+		texture = data.pack
+		path = _dir;
+		isZip = !_is_directory;
+		
+		// Load sprites
+		icon = sprite_add(_dir + PACK_ICON, 1, false, true, 0, 0);
+		banner = sprite_add(_dir + PACK_BANNER, 1, false, true, 0, 0);
+		preview = sprite_add(_dir + PACK_PREVIEW, 1, false, true, 0, 0);
+		
+		// Create text
+		text_name = text_create_wrap(x+6, y+33, depth-5, "[c_black]" + texture.Name, 94, 12, true);
+	}
+	catch(_)
 	{
-		icon = sprite_add(_dir + PACK_ICON, 1, false, false, 0, 0);
-		banner = sprite_add(_dir + PACK_BANNER, 1, false, false, 0, 0);
-		preview = sprite_add(_dir + PACK_PREVIEW, 1, false, false, 0, 0);
+		show_debug_message(_);
+		invalid = true;
+		err = _;
 	}
 	
 #endregion

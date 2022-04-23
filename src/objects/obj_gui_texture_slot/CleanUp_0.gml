@@ -1,4 +1,4 @@
-/// @description Cleanup some stuff
+/// @description Clean some stuff
 
 // Delete temporal images
 if (ready)
@@ -15,6 +15,9 @@ if (ready)
 
 // Destroy spinner
 loadspinner_destroy(spinner);
+
+// Destroy text elements
+text_destroy(text_name);
 
 // Restore the frame delay
 global.frame_delay = false;

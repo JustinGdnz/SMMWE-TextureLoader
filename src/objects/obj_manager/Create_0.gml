@@ -4,6 +4,7 @@
 tl_init();
 
 // Set default font
+draw_set_font(fnt_aseprite);
 scribble_font_set_default("fnt_aseprite");
 
 #region Create Directories

@@ -28,6 +28,23 @@ function text_create_hyperlink(_x, _y, _depth, _text, _name = "event", _color = 
 	return _id;
 }
 
+function text_create_wrap(_x, _y, _depth, _text, _width, _height = -1, _char = false)
+{
+	var _id = instance_create_depth(_x, _y, _depth, obj_text_wrap)
+	
+	with (_id)
+	{
+		text = _text;
+		wrap_width = _width;
+		wrap_height = _height;
+		wrap_characters = _char;
+		
+		event_user(0);
+	}
+	
+	return _id
+}
+
 function text_create_box(_x, _y, _width, _height, _depth, _text) {
 	var _id = instance_create_depth(_x, _y, _depth, obj_text_in_box);
 	
