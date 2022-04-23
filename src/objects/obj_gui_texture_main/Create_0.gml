@@ -16,11 +16,6 @@ for (var i = 0; i < size; i++)
 	var _x = x+((i%3)*104);
 	var _y = y+(floor(i/3)*52);
 	var _slot = instance_create_depth(_x+10, _y+10, depth-5, obj_gui_texture_slot);
-	with (_slot)
-	{
-		texture_index = i;
-		
-		// Set slot data
-		event_user(0);
-	}
+	with (_slot) texture_index = i;
+
 }

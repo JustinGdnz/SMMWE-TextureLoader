@@ -21,8 +21,8 @@ function Macros() {
 #macro CACHE_PACK_BANNER "banner.png"
 #macro CACHE_PACK_PREVIEW "preview.png"
 
-#macro PACK_PARSER_DATA_VERSION 1
-#macro PACK_PARSER_DATA_ENTRY "pack"
+#macro PACK_DATA_VERSION 1
+#macro PACK_DATA_ENTRY "pack"
 
 #macro SMMWE_LIB_DLL "libSMMWE.dll"
 

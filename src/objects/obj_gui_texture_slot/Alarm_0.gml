@@ -37,11 +37,14 @@ if (texture_index == undefined) { instance_destroy(); exit; }
 	
 		// Parse the data
 		data = json_parse(_str);
-		texture = data.pack;
+		//texture = data.pack;
 		
 		// Add path to the data
-		texture.path = _dir;
+		//texture.path = _dir;
 	} else invalid = true;
+	
+	// Validate json data
+	event_user(0)
 	
 	// Set sprites
 	if (!invalid)
