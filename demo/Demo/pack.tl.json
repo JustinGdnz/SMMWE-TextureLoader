@@ -1,0 +1,19 @@
+{
+    "version": 1,
+    "pack": {
+        "Name": "<Name>",
+        "Author": "<Author>",
+        "Description": "<Description>",
+        "Version": {
+            "major": 1,
+            "minor": 0
+        },
+        "TargetVersion": ["3.2.2"],
+        "Credits": [
+            {
+                "User": "<Credits>",
+                "SupportURL": "https://discord.gg/HZxdxxv9fV"
+            }
+        ]
+    }
+}
