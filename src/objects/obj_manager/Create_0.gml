@@ -7,8 +7,16 @@ tl_init();
 draw_set_font(fnt_aseprite);
 scribble_font_set_default("fnt_aseprite");
 
+// Texture data
 global.texture_dir = "";
 global.texture_zip = "";
+
+// Texture process
+//-1 = None
+// 0 = Cleaning cache
+// 1 = Extracting zip
+// 2 = Loading texture
+global.texture_process = -1;
 
 #region Create Directories
 
