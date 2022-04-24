@@ -1,7 +1,7 @@
 /// @description Texture interface
 
 // Create a screen fade
-fade = fade_create_below();
+fade = fade_create_below(0.8, 0, 0.15);
 
 // Set clickable layer
 button_layer = global.click_layer;
