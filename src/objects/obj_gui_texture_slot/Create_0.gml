@@ -2,6 +2,7 @@
 /* THIS INSTANCE INHERIT VARIABLES FROM IT'S OWNER */
 
 // Owner data
+owner = obj_gui_texture_main;
 texture_index = undefined;
 manager = obj_manager_texture;
 

@@ -68,3 +68,5 @@ else
 
 // Reset shader
 shader_reset();
+
+//draw_text(x, y, y);

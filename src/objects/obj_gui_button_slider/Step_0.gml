@@ -7,7 +7,7 @@ if (!select)
 	if (point_in_rectangle(mouse_x, mouse_y, x, y+pos, x+4, y+pos+size))
 	{
 		// And the mouse has been pressed
-		if (mouse_check_button_pressed(mb_left))
+		if (mouse_check_button_pressed(mb_left) && is_clickable(button_layer))
 		{
 			// Mark the slider as selected
 			select = true;

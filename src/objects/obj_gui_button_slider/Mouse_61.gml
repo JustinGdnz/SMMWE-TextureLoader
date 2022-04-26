@@ -1,5 +1,8 @@
 /// @description Scroll "up"
 
+// Exit if can't be clicked
+if (!is_clickable(button_layer)) exit;
+
 // Move the "slider" up by a fix speed
 value += scroll_speed;
 
