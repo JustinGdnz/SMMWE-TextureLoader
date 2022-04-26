@@ -1,7 +1,7 @@
 /// @description Handle most of the stuff
 
 // Exit whenever there's a delay or it wasn't handled correctly
-if (global.frame_delay) {alarm[0] = 5; exit;}
+if (global.frame_delay || hidden) {alarm[0] = 5; exit;}
 if (texture_index == undefined) { instance_destroy(); exit; }
 
 #region Get texture data
@@ -53,7 +53,7 @@ if (texture_index == undefined) { instance_destroy(); exit; }
 		preview = sprite_add(_dir + PACK_PREVIEW, 1, false, true, 0, 0);
 		
 		// Create text
-		text_name = text_create_wrap(x+6, y+33, depth-5, "[c_black]" + texture.Name, 90, 12, true);
+		text_name = text_create_wrap(0, 0, depth-5, "[c_black]" + texture.Name, 90, 12, true, true);
 	}
 	catch(_)
 	{

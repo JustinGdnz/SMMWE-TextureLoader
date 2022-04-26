@@ -1,9 +1,10 @@
-function text_create(_x, _y, _depth, _text) {
+function text_create(_x, _y, _depth, _text, _manually = false) {
 	var _id = instance_create_depth(_x, _y, _depth, obj_text)
 	
 	with (_id)
 	{
 		text = _text;
+		manually = _manually;
 		
 		event_user(0);
 	}
@@ -28,7 +29,7 @@ function text_create_hyperlink(_x, _y, _depth, _text, _name = "event", _color = 
 	return _id;
 }
 
-function text_create_wrap(_x, _y, _depth, _text, _width, _height = -1, _char = false)
+function text_create_wrap(_x, _y, _depth, _text, _width, _height = -1, _char = false, _manually = false)
 {
 	var _id = instance_create_depth(_x, _y, _depth, obj_text_wrap)
 	
@@ -38,6 +39,8 @@ function text_create_wrap(_x, _y, _depth, _text, _width, _height = -1, _char = f
 		wrap_width = _width;
 		wrap_height = _height;
 		wrap_characters = _char;
+		
+		manually = _manually
 		
 		event_user(0);
 	}

@@ -16,3 +16,6 @@ debug = debug;
 
 // Text element
 element = scribble(string(text_args) + string(text)).starting_format(font, color).align(halign, valign);
+
+// Define methods
+event_user(15);

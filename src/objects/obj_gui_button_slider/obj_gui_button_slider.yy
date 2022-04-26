@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "spr_loading_spinner",
-    "path": "sprites/spr_loading_spinner/spr_loading_spinner.yy",
+    "name": "spr_gui_button_slider",
+    "path": "sprites/spr_gui_button_slider/spr_gui_button_slider.yy",
   },
   "solid": false,
   "visible": true,
@@ -24,15 +24,18 @@
     {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
     {"isDnD":false,"eventNum":0,"eventType":3,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
     {"isDnD":false,"eventNum":0,"eventType":8,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"isDnD":false,"eventNum":60,"eventType":6,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"isDnD":false,"eventNum":61,"eventType":6,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"isDnD":false,"eventNum":0,"eventType":2,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
   ],
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Special",
-    "path": "folders/Objects/Special.yy",
+    "name": "Textures",
+    "path": "folders/Objects/GUI/Textures.yy",
   },
   "resourceVersion": "1.0",
-  "name": "obj_loading_spinner",
+  "name": "obj_gui_button_slider",
   "tags": [],
   "resourceType": "GMObject",
 }

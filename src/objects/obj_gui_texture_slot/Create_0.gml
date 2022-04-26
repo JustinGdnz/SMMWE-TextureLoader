@@ -13,7 +13,9 @@ invalid = false;
 err = undefined;
 
 // Create a loading spinner
-spinner = loadspinner_create(x+sprite_width/2, y+sprite_height/2, 0.25, 0.25, depth-5)
+spinner = loadspinner_create(x+sprite_width/2, y+sprite_height/2, 0.25, 0.25, depth-5, true);
+
+hidden = false;
 
 #region Definitions
 
@@ -30,6 +32,7 @@ spinner = loadspinner_create(x+sprite_width/2, y+sprite_height/2, 0.25, 0.25, de
 	
 	// Text elements
 	text_name = noone;
+	text_surf = surface_create(90, 12);
 	
 #endregion
 

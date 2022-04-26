@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "spr_loading_spinner",
-    "path": "sprites/spr_loading_spinner/spr_loading_spinner.yy",
+    "name": "spr_gui_button_slider",
+    "path": "sprites/spr_gui_button_slider/spr_gui_button_slider.yy",
   },
   "solid": false,
   "visible": true,
@@ -28,11 +28,11 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Special",
-    "path": "folders/Objects/Special.yy",
+    "name": "zDeprecated",
+    "path": "folders/zDeprecated.yy",
   },
   "resourceVersion": "1.0",
-  "name": "obj_loading_spinner",
+  "name": "obj_gui_button_slider_ori",
   "tags": [],
   "resourceType": "GMObject",
 }
