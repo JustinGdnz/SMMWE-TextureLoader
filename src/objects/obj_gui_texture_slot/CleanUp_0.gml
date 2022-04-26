@@ -21,3 +21,6 @@ text_destroy(text_name);
 
 // Restore the frame delay
 global.frame_delay = false;
+
+if (surface_exists(text_surf))
+	surface_free(text_surf);

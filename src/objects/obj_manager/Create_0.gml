@@ -7,6 +7,8 @@ tl_init();
 draw_set_font(fnt_aseprite);
 scribble_font_set_default("fnt_aseprite");
 
+surface_depth_disable(true);
+
 // Texture data
 global.texture_dir = "";
 global.texture_zip = "";

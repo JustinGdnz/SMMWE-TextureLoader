@@ -31,8 +31,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "zDO NOT ENTER",
-    "path": "folders/zDO NOT ENTER.yy",
+    "name": "zDeprecated",
+    "path": "folders/zDeprecated.yy",
   },
   "resourceVersion": "1.0",
   "name": "obj_gui_texture_info_ori",

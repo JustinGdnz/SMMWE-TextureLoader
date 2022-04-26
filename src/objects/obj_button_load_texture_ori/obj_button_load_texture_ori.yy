@@ -33,8 +33,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "zDO NOT ENTER",
-    "path": "folders/zDO NOT ENTER.yy",
+    "name": "zDeprecated",
+    "path": "folders/zDeprecated.yy",
   },
   "resourceVersion": "1.0",
   "name": "obj_button_load_texture_ori",

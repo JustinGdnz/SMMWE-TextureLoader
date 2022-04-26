@@ -4,4 +4,7 @@
 if (tl_has_module(SMMWE_LIB_DLL))
 	alarm[4] = 1;
 else
+{
 	instance_destroy(obj_gui_loading_screen);
+	image_index = 0;
+}
