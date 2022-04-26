@@ -26,4 +26,9 @@ with(slider) {
 	// Set the slider max value
 	if (size > 6)
 		max_value = (floor(((size-1)/3))-1)*52
+	else
+		max_value = 0;
+
+	// Update slider
+	alarm[0] = 1;
 }
