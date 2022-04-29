@@ -1,8 +1,5 @@
 /// @description Update slot position and state
 
-// Exit event if is not ready yet
-if (!ready) exit;
-
 // Get value from owner object's slider
 var _pos = owner.slider.value;
 
