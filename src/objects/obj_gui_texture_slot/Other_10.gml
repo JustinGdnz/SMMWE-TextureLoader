@@ -4,7 +4,7 @@
 if (!is_struct(data)) { invalid = true; exit; }
 
 // Ensure there's a "version" key
-data[$ "version"] ??= PACK_DATA_VERSION;
+data[$ "version"] ??= PACK_DATA_FORCE_VERSION;
 var _version = data.version
 
 // Choose the correct version
@@ -47,6 +47,14 @@ switch(_version)
 				}
 			}
 		
-		break;
+	break;
 	default:
+	
+		// Force version
+		data.version = PACK_DATA_FORCE_VERSION;
+		
+		// Run script again
+		event_user(0);
+
+	break;
 }

@@ -21,6 +21,7 @@ function Macros() {
 #macro CACHE_PACK_BANNER "banner.png"
 #macro CACHE_PACK_PREVIEW "preview.png"
 
+#macro PACK_DATA_FORCE_VERSION 1
 #macro PACK_DATA_VERSION 1
 #macro PACK_DATA_ENTRY "pack"
 

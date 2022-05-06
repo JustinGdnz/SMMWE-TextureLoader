@@ -39,16 +39,16 @@ global.texture_process = -1;
 	#macro workspace_directory global.workspace_dir
 	
 	// Create "Textures" directory
-	if (!directory_exists("Textures"))
-		directory_create("Textures");
+	if (!directory_exists(textures_directory))
+		directory_create(textures_directory);
 
 	// Create "Cache" directory
-	if (!directory_exists("Cache"))
-		directory_create("Cache");
+	if (!directory_exists(cache_directory))
+		directory_create(cache_directory);
 
 	// Create "Workspaces" directory
-	if (!directory_exists("Workspaces"))
-		directory_create("Workspaces");
+	if (!directory_exists(workspace_directory))
+		directory_create(workspace_directory);
 
 #endregion
 
