@@ -9,7 +9,7 @@ En este repositorio se encuentra el código enfocado únicamente en ***Windows**
 <ins>**Crear solución**</ins>
 
 1. Clona el repositorio actual con `git clone --recursive https://github.com/JustinGdnz/SMMWE-TextureLoader`
-2. Ejecuta el archivo [Win-Generate.bat](https://github.com/JustinGdnz/SMMWE-TextureLoader/blob/master/scripts/Win-Genenerate.bat) encontrado en la carpeta `scripts`.
+2. Ejecuta el archivo [Win-Generate.bat](https://github.com/JustinGdnz/SMMWE-TextureLoader/blob/main/scripts/Win-Genenerate.bat) encontrado en la carpeta `scripts`.
 3. Listo, así de fácil.
 
 ***
