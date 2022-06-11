@@ -1,9 +1,4 @@
-[submodule "dependencies/TextureLoader"]
-	path = dependencies/TextureLoader
-	url = https://github.com/JustinGdnz/TextureLoader.git
-[submodule "dependencies/libSMMWE"]
-	path = dependencies/libSMMWE
-	url = https://github.com/JustinGdnz/libSMMWE.git
-[submodule "dependencies/libzippp"]
-	path = dependencies/libzippp
+
+[submodule "TextureLoader/vendor/libzippp"]
+	path = TextureLoader/vendor/libzippp
 	url = https://github.com/ctabin/libzippp
