@@ -5,6 +5,10 @@ bin-int/
 #premake
 !**/premake/bin/
 
+#dependencies
+!**/libzip/bin/
+!**/zlib/bin/
+
 # Visual Studio files and folder
 .vs/
 **.sln
