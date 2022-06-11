@@ -14,29 +14,30 @@ project "TextureLoader"
         "src/**.cpp",
         "src/**.h",
 
-        "vendor/libzip/lib/**.c",
-        "vendor/libzip/lib/**.h",
-
-        "vendor/zlib/*.c",
-        "vendor/zlib/*.h"
+        "vendor/libzippp/src/libzippp.cpp",
+        "vendor/libzippp/src/libzippp.h"
+    }
+    
+    links {
+        "vendor/zlib/lib/%{cfg.buildcfg}/zlib.lib",
+        "vendor/libzip/lib/%{cfg.buildcfg}/zip.lib"
     }
 
     includedirs {
         "src",
         "vendor/libzippp/src",
-        "vendor/libzip/lib"
+        "vendor/zlib/include",
+        "vendor/libzip/include"
     }
 
-    postbuildcommands
-    {
-        "{COPY} \"%{cfg.targetdir}/TextureLoader.dll\" \"%{wks.location}/TLApp/src/extensions/TextureLoader\""
+    postbuildcommands {
+        "{COPY} \"%{cfg.targetdir}/TextureLoader.dll\" \"%{wks.location}/TLApp/src/extensions/TextureLoader\"",
+        "{COPY} \"vendor/libzip/bin/%{cfg.buildcfg}/zip.dll\" \"%{wks.location}/TLApp/src/extensions/TextureLoader\"",
+        "{COPY} \"vendor/zlib/bin/%{cfg.buildcfg}/zlib.dll\" \"%{wks.location}/TLApp/src/extensions/TextureLoader\""
     }
 
 
-    filter "files:vendor/libzip/lib/**.c"
-	flags { "NoPCH" }
-
-    filter "files:vendor/zlib/*.c"
+    filter "files:vendor/libzippp/src/libzippp.cpp"
 	flags { "NoPCH" }
 
     filter { "system:windows" }

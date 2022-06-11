@@ -1,1 +1,4 @@
 
+[submodule "TextureLoader/vendor/libzippp"]
+	path = TextureLoader/vendor/libzippp
+	url = https://github.com/ctabin/libzippp
