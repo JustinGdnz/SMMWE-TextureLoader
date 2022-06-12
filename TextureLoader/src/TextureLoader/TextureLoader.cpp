@@ -27,6 +27,26 @@ char* GetEnv(const char* pPath)
 	return env;
 }
 
+std::string to_utf8(const std::wstring& s)
+{
+	std::string utf8;
+	int len = WideCharToMultiByte(CP_UTF8, 0, s.c_str(), s.length(), NULL, 0, NULL, NULL);
+	if (len > 0)
+	{
+		utf8.resize(len);
+		WideCharToMultiByte(CP_UTF8, 0, s.c_str(), s.length(), &utf8[0], len, NULL, NULL);
+	}
+	return utf8;
+}
+
+std::wstring to_wide(const std::string& str)
+{
+	int count = MultiByteToWideChar(CP_UTF8, 0, str.c_str(), str.length(), NULL, 0);
+	std::wstring wstr(count, 0);
+	MultiByteToWideChar(CP_UTF8, 0, str.c_str(), str.length(), &wstr[0], count);
+	return wstr;
+}
+
 // Inicializar el DLL por parte de GMS2
 GM_EXPORT double dllinit()
 {
@@ -126,9 +146,10 @@ GM_EXPORT char* tl_get_environment_path(char* env)
 GM_EXPORT double tl_open_folder(char* path)
 {
 	if (!tl_initialized) return GM_FALSE;
-
 	filesystem::path oPath = path;
-	ShellExecute(NULL, L"open", oPath.wstring().c_str(), NULL, NULL, SW_SHOWDEFAULT);
+	std::wstring folder = to_wide(oPath.string());		// Support for unicode characters
+
+	ShellExecuteW(NULL, L"open", folder.c_str(), NULL, NULL, SW_SHOWDEFAULT);
 
 	return GM_TRUE;
 }
@@ -137,9 +158,10 @@ GM_EXPORT double tl_open_folder(char* path)
 GM_EXPORT double tl_open_url(char* url)
 {
 	if (!tl_initialized) return GM_FALSE;
-
 	filesystem::path Path = url;
-	ShellExecute(0, 0, Path.wstring().c_str(), 0, 0, SW_SHOW);
+	std::wstring new_url = to_wide(Path.string());		// Support for unicode characters
+
+	ShellExecuteW(0, 0, new_url.c_str(), 0, 0, SW_SHOW);
 
 	return GM_TRUE;
 }
@@ -183,7 +205,9 @@ GM_EXPORT double tl_zip_unzip_file(char* fname, char* output)
 	ZipEntry file = ZipFile->getEntry(fname);
 	if (file.isNull()) return GM_FALSE;
 
-	std::ofstream out(output, std::ios::binary);
+	std::wstring outPath = to_wide(output);			// Support for unicode characters
+
+	std::ofstream out(outPath, std::ios::binary);
 	out.write((char*)file.readAsBinary(), file.getSize());
 	out.close();
 
