@@ -3,6 +3,7 @@
 #include <iostream>
 #include <filesystem>
 #include <fstream>
+#include <codecvt>
 
 // Data structures
 #include <vector>

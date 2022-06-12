@@ -7,7 +7,7 @@
 DWORD WINAPI ModThread(HMODULE hModule)
 {
     // Registar algunas funciones provenientes del juego base
-    SMMWE::RegisterMethods(mem::gameBase + 0xABDA40, mem::gameBase + 0xEEE090, mem::gameBase + 0xF06CE0, mem::gameBase + 0xEF1530, mem::gameBase + 0x1460);
+    SMMWE::RegisterMethods(mem::gameBase + 0xABD920, mem::gameBase + 0xEEE270, mem::gameBase + 0xF06EA0, mem::gameBase + 0xEF1710, mem::gameBase + 0x1460);
 
     // "Robar" memoria de SMM:WE para "inyectar" nuevo codigo
     SMMWE::Hook();
