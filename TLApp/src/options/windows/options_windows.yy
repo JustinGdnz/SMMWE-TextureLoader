@@ -1,7 +1,7 @@
 {
   "option_windows_display_name": "SMM:WE Texture Loader",
   "option_windows_executable_name": "${project_name}.exe",
-  "option_windows_version": "1.0.2.0",
+  "option_windows_version": "1.1.1.0",
   "option_windows_company_info": "JustinGdnz",
   "option_windows_product_info": "JustinGdnz",
   "option_windows_copyright_info": "JustinGdnz",

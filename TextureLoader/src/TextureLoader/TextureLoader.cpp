@@ -27,6 +27,15 @@ char* GetEnv(const char* pPath)
 	return env;
 }
 
+wchar_t* GetEnvW(const wchar_t* pPath)
+{
+	wchar_t* env;
+	size_t len;
+	errno_t err = _wdupenv_s(&env, &len, pPath);
+
+	return env;
+}
+
 std::string to_utf8(const std::wstring& s)
 {
 	std::string utf8;
@@ -139,7 +148,11 @@ GM_EXPORT double tl_has_module(char* dllname)
 GM_EXPORT char* tl_get_environment_path(char* env)
 {
 	if (!tl_initialized) return (char*)"";
-	return GetEnv(env);
+	std::wstring wstr = to_wide(env);
+
+	static std::string env_str = to_utf8(GetEnvW(wstr.c_str()));
+
+	return (char*)env_str.c_str();
 }
 
 // Abrir una carpeta en el explorador de archivos

@@ -6,7 +6,7 @@
 namespace filesystem = std::filesystem;
 
 // Statics
-static filesystem::path LocalAppData = mem::GetEnv("LOCALAPPDATA");			// %localappdata%	
+static filesystem::path LocalAppData = mem::GetEnvW(L"LOCALAPPDATA");			// %localappdata%	
 static filesystem::path TLPath = LocalAppData / "SMMWE_Texture_Loader";		// directorio local de TL
 
 // Script prinicipal
@@ -25,7 +25,7 @@ void __cdecl SMMWE::hkdPersistentStep(void* _pSelf, void* _pOther)
 				//temporal_file >> texdir;
 				std::string line;
 				std::getline(temporal_file, line);
-				texdir = line;
+				texdir = mem::to_wide(line);
 			}
 		}
 
@@ -45,7 +45,7 @@ void __cdecl SMMWE::hkdPersistentStep(void* _pSelf, void* _pOther)
 
 			// Romper el sandbox
 			GetInstance().AsyncBegin(_pSelf, _pOther, "dummy");
-			GetInstance().AsyncOption(_pSelf, _pOther, "temprloc", TLPath.string().c_str());
+			GetInstance().AsyncOption(_pSelf, _pOther, "temprloc", mem::to_utf8(TLPath.wstring()).c_str());
 		}
 
 		if (filesystem::exists(texdir / "Sprites"))
@@ -63,7 +63,7 @@ void __cdecl SMMWE::hkdPersistentStep(void* _pSelf, void* _pOther)
 				if (!(entry_extn.compare(".png") == 0)) continue;
 
 				// Strings del nombre del archivo
-				std::string fname = entry_file.string();
+				std::string fname = mem::to_utf8(entry_file.wstring());
 				std::string Strip = fname;
 
 				// Obtener el nombre absoluto del sprite
@@ -88,7 +88,7 @@ void __cdecl SMMWE::hkdPersistentStep(void* _pSelf, void* _pOther)
 				// Si el index del sprite no es invalido se reemplazara el sprite
 				if (sprite_index != -1)
 				{
-					GetInstance().SpriteReplace(_pSelf, _pOther, sprite_index, entry_path.string().c_str(), imgnumb, 0, 0, GetInstance().GetSpriteXOrig(_pSelf, _pOther, sprite_index), GetInstance().GetSpriteYOrig(_pSelf, _pOther, sprite_index));
+					GetInstance().SpriteReplace(_pSelf, _pOther, sprite_index, mem::to_utf8(entry_path.wstring()).c_str(), imgnumb, 0, 0, GetInstance().GetSpriteXOrig(_pSelf, _pOther, sprite_index), GetInstance().GetSpriteYOrig(_pSelf, _pOther, sprite_index));
 				}
 			}
 		}
@@ -109,7 +109,7 @@ void __cdecl SMMWE::hkdPersistentStep(void* _pSelf, void* _pOther)
 				if (!(entry_extn.compare(".png") == 0)) continue;
 
 				// Nombre del archivo
-				std::string fname = entry_stem.string();
+				std::string fname = mem::to_utf8(entry_stem.wstring());
 
 				// Obtener el index del background
 				double background_index = GetInstance().GetAssetIndex(_pSelf, _pOther, fname.c_str());
@@ -117,7 +117,7 @@ void __cdecl SMMWE::hkdPersistentStep(void* _pSelf, void* _pOther)
 				// Si el index del background no es invalido se reemplazara el background
 				if (background_index != -1)
 				{
-					GetInstance().BackgroundReplace(_pSelf, _pOther, background_index, entry_path.string().c_str(), 0, 0);
+					GetInstance().BackgroundReplace(_pSelf, _pOther, background_index, mem::to_utf8(entry_path.wstring()).c_str(), 0, 0);
 				}
 			}
 		}
