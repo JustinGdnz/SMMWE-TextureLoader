@@ -53,6 +53,35 @@ char* mem::GetEnv(const char* pPath)
 	return env;
 }
 
+wchar_t* mem::GetEnvW(const wchar_t* pPath)
+{
+	wchar_t* env;
+	size_t len;
+	errno_t err = _wdupenv_s(&env, &len, pPath);
+
+	return env;
+}
+
+std::string mem::to_utf8(const std::wstring& s)
+{
+	std::string utf8;
+	int len = WideCharToMultiByte(CP_UTF8, 0, s.c_str(), s.length(), NULL, 0, NULL, NULL);
+	if (len > 0)
+	{
+		utf8.resize(len);
+		WideCharToMultiByte(CP_UTF8, 0, s.c_str(), s.length(), &utf8[0], len, NULL, NULL);
+	}
+	return utf8;
+}
+
+std::wstring mem::to_wide(const std::string& str)
+{
+	int count = MultiByteToWideChar(CP_UTF8, 0, str.c_str(), str.length(), NULL, 0);
+	std::wstring wstr(count, 0);
+	MultiByteToWideChar(CP_UTF8, 0, str.c_str(), str.length(), &wstr[0], count);
+	return wstr;
+}
+
 bool mem::DejectTrampHook32(BYTE* gateway, const uintptr_t len)
 {
 	MEMORY_BASIC_INFORMATION mbi{ nullptr };
